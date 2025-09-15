@@ -23,13 +23,22 @@ async function main() {
     // })
     // console.log(userData)
 
-    const userData = await prisma.users.findUniqueOrThrow({
-        where: {
-            id: 4
+    // const userData = await prisma.users.findUniqueOrThrow({
+    //     where: {
+    //         id: 4
+    //     }
+    // })
+    // console.log(userData)
+
+    const updateData = await prisma.users.update({
+        where:{
+            id:1
+        },
+        data:{
+            name: "Mayesha Mumtaz Soumy"
         }
     })
-    console.log(userData)
-   
+   console.log(updateData)
 }
 
 main()
