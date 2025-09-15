@@ -49,15 +49,23 @@ async function main() {
 //         }
 //     })
 //    console.log(updateProfilePhoto)
-    const updateProfilePhoto = await prisma.users.updateManyAndReturn({
-        where:{
-            profilePicture: null
-        },
-        data:{
-            profilePicture: "https://www.facebook.com/photo/?fbid=2103458326831735&set=a.119795195198068"
-        }
-    })
-   console.log(updateProfilePhoto)
+
+//     const updateProfilePhoto = await prisma.users.updateManyAndReturn({
+//         where:{
+//             profilePicture: null
+//         },
+//         data:{
+//             profilePicture: "https://www.facebook.com/photo/?fbid=2103458326831735&set=a.119795195198068"
+//         }
+//     })
+//    console.log(updateProfilePhoto)
+
+const deleteUser = await prisma.users.delete({
+    where:{
+        id: 1
+    }
+})
+console.log(deleteUser)
 }
 
 main()
