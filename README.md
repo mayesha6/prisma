@@ -3,7 +3,7 @@
 3. generate client - done
 4. query DB - running
 
-##
+## CRUD Operation
 1. create
 2. findMany - array of object (return all data)
 3. findUnique - single object (return a single data)
