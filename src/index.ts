@@ -98,27 +98,37 @@ async function main() {
 // })
 // console.log(insertUsers)
 
-const insertUsers = await prisma.users.createManyAndReturn({
-        data: [
-            {
-                name: "Mayesha Mumtaz",
-                email: "mayesha@gmail.com"
-            },
-            {
-                name: "Rathi Alam",
-                email: "rathi@gmail.com"
-            },
-            {
-                name: "Dola",
-                email: "dola@gmail.com"
-            },
-            {
-                name: "Ahasan Habib Utsho",
-                email: "utsho@gmail.com"
-            },
-        ]
+// const insertUsers = await prisma.users.createManyAndReturn({
+//         data: [
+//             {
+//                 name: "Mayesha Mumtaz",
+//                 email: "mayesha@gmail.com"
+//             },
+//             {
+//                 name: "Rathi Alam",
+//                 email: "rathi@gmail.com"
+//             },
+//             {
+//                 name: "Dola",
+//                 email: "dola@gmail.com"
+//             },
+//             {
+//                 name: "Ahasan Habib Utsho",
+//                 email: "utsho@gmail.com"
+//             },
+//         ]
+// })
+// console.log(insertUsers)
+
+const searchUserData = await prisma.users.findMany({
+    where: {
+        name: {
+            contains: "a",
+            mode: "insensitive"
+        }
+    }
 })
-console.log(insertUsers)
+console.log(searchUserData)
 }
 
 main()

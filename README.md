@@ -13,3 +13,6 @@
 7. updateManyAndReturn - update data and return those data
 8. delete - delete a single user
 9. deleteMany - delete more than one
+10. insertMany - insert many user in table
+11. insertManyAndReturn - insert many and return all data
+12. search (case insensitive)
