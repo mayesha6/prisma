@@ -16,9 +16,16 @@ async function main() {
     // const userData = await prisma.users.findMany()
     // console.log(userData)
 
-    const userData = await prisma.users.findUnique({
+    // const userData = await prisma.users.findUnique({
+    //     where: {
+    //         id: 1
+    //     }
+    // })
+    // console.log(userData)
+
+    const userData = await prisma.users.findUniqueOrThrow({
         where: {
-            id: 1
+            id: 4
         }
     })
     console.log(userData)
