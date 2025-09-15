@@ -30,15 +30,25 @@ async function main() {
     // })
     // console.log(userData)
 
-    const updateData = await prisma.users.update({
+//     const updateData = await prisma.users.update({
+//         where:{
+//             id:1
+//         },
+//         data:{
+//             name: "Mayesha Mumtaz Soumy"
+//         }
+//     })
+//    console.log(updateData)
+
+    const updateProfilePhoto = await prisma.users.updateMany({
         where:{
-            id:1
+            profilePicture: null
         },
         data:{
-            name: "Mayesha Mumtaz Soumy"
+            profilePicture: "https://www.facebook.com/photo/?fbid=2103458326831735&set=a.119795195198068"
         }
     })
-   console.log(updateData)
+   console.log(updateProfilePhoto)
 }
 
 main()
