@@ -40,7 +40,16 @@ async function main() {
 //     })
 //    console.log(updateData)
 
-    const updateProfilePhoto = await prisma.users.updateMany({
+//     const updateProfilePhoto = await prisma.users.updateMany({
+//         where:{
+//             profilePicture: null
+//         },
+//         data:{
+//             profilePicture: "https://www.facebook.com/photo/?fbid=2103458326831735&set=a.119795195198068"
+//         }
+//     })
+//    console.log(updateProfilePhoto)
+    const updateProfilePhoto = await prisma.users.updateManyAndReturn({
         where:{
             profilePicture: null
         },
